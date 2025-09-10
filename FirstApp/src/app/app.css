@@ -1,0 +1,30 @@
+.btn {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    margin-top: 40px;
+    border-radius: 50%;
+    color: white;
+}
+.inc{
+    background-color: green;
+}
+.rst{
+    background-color: black;
+}
+.dec{
+    background-color: red;
+}
+.counter{
+    text-align: center;
+    width: 100px;
+    margin: auto;
+    border: 3px solid black;
+    border-radius: 10%;
+    padding: 20px;
+}
+.event{
+    width: 100px;
+    padding: 80px;
+    background-color: green;
+}

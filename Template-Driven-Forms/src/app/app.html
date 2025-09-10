@@ -1,0 +1,27 @@
+<h1>Template Driven Forms</h1>
+<form action="" #userForm="ngForm" (ngSubmit)="addDetails(userForm.value)">
+  <input #name="ngModel" type="text" required name="name" id="name" placeholder="Enter Name" ngModel><br>
+  <span class="error" *ngIf="name.invalid && name.touched">Name is Required</span><br><br>
+  <input required email   #email="ngModel" type="email" name="email" id="email" placeholder="Enter Email" ngModel><br>
+  <span class="error" *ngIf="email.invalid && email.touched">Please enter valid Email</span><br><br>
+  <input required pattern="[a-zA-Z0-9\s]+"  #address="ngModel" type="text" name="address" id="address" placeholder="Enter Address" ngModel><br>
+  <span class="error" *ngIf="address.invalid && address.touched">Please Enter valid Address </span><br><br>
+  <input required minlength="8" maxlength="20" #password="ngModel" type="password" name="password" id="password" placeholder="Enter Password" ngModel><br>
+  <span class="error" *ngIf="password.invalid && password.touched">Password is Required</span>
+  <br><br>
+  <select required #gender="ngModel" name="gender" id="gender" ngModel>
+    <!-- <option value="" >Select Gender</option> -->
+    <option value="Male" >Male</option>
+    <option value="Female">Female</option>
+    <option value="Other">Other</option>
+  </select><br>
+  <span class="error" *ngIf="gender.invalid && gender.touched">Gender is Required</span><br><br>
+  <input type="range" name="range" id="range" min="0" max="20" [ngModel]="'10'"><br><br>
+  <button [disabled]="userForm.invalid">Add User</button>
+</form>
+<h3>{{userDetails?.name}}</h3>
+<h3>{{userDetails?.email}}</h3>
+<h3>{{userDetails?.password}}</h3>
+<h3>{{userDetails?.address}}</h3>
+<h3>{{userDetails?.gender}}</h3>
+<h3>{{userDetails?.range}}</h3>

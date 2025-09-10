@@ -1,0 +1,16 @@
+<p>home works!</p>
+
+<!-- Data Passing between Routes -->
+ <!-- First Way -->
+ <!-- <a [routerLink]="['profile',{name:'Pat'}]">Your Profile</a> -->
+ <!-- Second Way -->
+ <!-- <button (click)="getDetails('Hello')">Get Details</button> -->
+ <!-- Third Way -->
+<!-- <a routerLink="profile">Your Profile</a> -->
+
+<!-- User List -->
+ <ul>
+ @for(user of users; track user.id){
+    <li><a routerLink="user/{{user['id']}}/{{user['name']}}">{{user['name']}}</a></li>
+ }
+ </ul>

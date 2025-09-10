@@ -1,0 +1,22 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    font-size: 15px;
+}
+
+nav ul {
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+    list-style: none;
+
+}
+
+ul li a {
+    text-decoration: none;
+}
+
+.active {
+    background-color: chocolate;
+}

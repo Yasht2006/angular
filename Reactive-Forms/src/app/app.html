@@ -1,0 +1,32 @@
+<h1>Reactive Forms</h1>
+<!--
+<h1>Basic Reactive Forms</h1>
+
+<form action="" method="post"> 
+  <input [formControl]="name" type="text" name="name" id="name" placeholder="Enter Name"><br><br>
+  <input [formControl]="password" type="text" name="password" id="password" placeholder="Enter Password"><br><br>
+  <button type="button" (click)="displayValue()">Login</button>
+  <button type="button" (click)="setValues()">Set Value</button>
+  <h3>{{name.value}}</h3>
+  <h3>{{password.value}}</h3>
+</form> -->
+
+<h2>Form Grouping with Reactive Forms</h2>
+<form action="" [formGroup]="profileForm" (ngSubmit)="onSubmit()" method="post"> 
+  <input formControlName="name" type="text" name="name" id="name" placeholder="Enter Name"><br>
+  <span class="error" *ngIf="name?.hasError('required')">Name is Required</span><br>
+  <span class="error" *ngIf="name?.invalid && (name?.dirty || name?.touched)">Please Enter Name</span>
+  <br><br>
+  <input formControlName="email" type="email" name="email" id="email" placeholder="Enter Email"><br>
+  <span class="error" *ngIf="email?.hasError('required')">Email is Required</span><br>
+  <span class="error" *ngIf="email?.invalid && (email?.dirty || email?.touched)">Please Enter valid Email</span><br><br>
+  <input formControlName="password" type="email" name="password" id="password" placeholder="Enter Password"><br>
+  <span class="error" *ngIf="password?.hasError('required')">Password is Required</span><br>
+  <span class="error" *ngIf="password?.invalid && (password?.dirty || password?.touched)">Please Enter Valid Password</span><br><br>
+  <!-- <button type="button" (click)="setValue()">Set value</button> -->
+  <button type="submit" >Submit</button>
+
+</form> 
+<h3>{{profileForm.value.name}}</h3>
+<h3>{{profileForm.value.password}}</h3>
+<h3>{{profileForm.value.email}}</h3>
