@@ -1,0 +1,10 @@
+<nav>
+  <a routerLink="/login">Login</a> |
+  <a routerLink="/register">Register</a> |
+  <a routerLink="/dashboard">Dashboard</a>
+  <span *ngIf="currentUser$ | async as user">
+    &nbsp;| Logged in as {{ user.username }}
+    <button (click)="logout()">Logout</button>
+  </span>
+</nav>
+<hr />
