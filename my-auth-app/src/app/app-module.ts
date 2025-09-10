@@ -8,6 +8,7 @@ import { Register } from './components/register/register';
 import { Header } from './components/header/header';
 import { Dashboard } from './components/dashboard/dashboard';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Menu } from './components/menu/menu';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     Login,
     Register,
     Header,
-    Dashboard
+    Dashboard,
+    Menu
   ],
   imports: [
     BrowserModule,

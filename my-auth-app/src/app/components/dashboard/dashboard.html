@@ -1,5 +1,10 @@
 <app-header></app-header>
-<h2>Dashboard</h2>
-<div *ngIf="currentUser$ | async as user">
-  Welcome, {{ user.username }}!
+
+<div class="dashboard-layout">
+  <app-menu></app-menu>
+
+  <main class="dashboard-main">
+    <h2>Dashboard</h2>
+    <p>Welcome to your dashboard!</p>
+  </main>
 </div>
