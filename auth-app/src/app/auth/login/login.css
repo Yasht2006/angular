@@ -1,0 +1,89 @@
+form {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #dd0031;
+}
+
+div {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+input[type='text'],
+input[type='password'] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+input.ng-invalid.ng-touched {
+  border-color: #e53935; /* red border on error */
+}
+
+small {
+  font-size: 13px;
+  color: #e53935;
+  margin-top: 4px;
+  display: block;
+}
+
+button[type='submit'] {
+  width: 100%;
+  background-color: #dd0031;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button[type='submit']:hover {
+  background-color: #c3002f;
+}
+
+p {
+  text-align: center;
+  margin-top: 16px;
+}
+
+a {
+  color: #dd0031;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Error message boxes */
+.error-message {
+  color: #e53935;
+  background-color: #fdecea;
+  border: 1px solid #e53935;
+  padding: 10px 14px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}

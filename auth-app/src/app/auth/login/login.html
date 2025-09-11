@@ -1,0 +1,49 @@
+<h2>Login</h2>
+
+@if (showFormError) {
+  <div class="error-message">
+    Please fix the errors in the form before submitting.
+  </div>
+}
+
+@if (loginFailed) {
+  <div class="error-message">
+    Invalid email or password.
+  </div>
+}
+
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>Email:</label>
+    <input type="text" formControlName="email" />
+
+    @if (loginForm.get('email')?.invalid && loginForm.get('email')?.touched) {
+      <div>
+        @if (loginForm.get('email')?.errors?.['required']) {
+          <small style="color: red;">Email is required.</small>
+        } @else if (loginForm.get('email')?.errors?.['email']) {
+          <small style="color: red;">Invalid email format.</small>
+        }
+      </div>
+    }
+  </div>
+
+  <div>
+    <label>Password:</label>
+    <input type="password" formControlName="password" />
+
+    @if (loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
+      <div>
+        @if (loginForm.get('password')?.errors?.['required']) {
+          <small style="color: red;">Password is required.</small>
+        }
+      </div>
+    }
+  </div>
+
+  <button type="submit">Login</button>
+  <p>
+    No account? <a routerLink="/auth/register">Register here</a>.
+  </p>
+</form>

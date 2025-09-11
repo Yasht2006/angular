@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+/* app.component.css */
+.content {
+  margin-left: 240px; /* same as sidebar width */
+  margin-top: 60px; /* same as header height */
+  padding: 20px;
+}

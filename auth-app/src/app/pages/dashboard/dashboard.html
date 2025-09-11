@@ -1,0 +1,35 @@
+<app-header></app-header>
+<app-menu></app-menu>
+
+<div class="container">
+  <main class="content">
+    <h2>User List</h2>
+
+    @if (users.length === 0) {
+      <p>No users registered yet.</p>
+    } @else {
+      <table class="user-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th style="text-align: center;">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (user of users; track user.id) {
+            <tr>
+              <td>{{ user.id }}</td>
+              <td>{{ user.email }}</td>
+              <td class="actions">
+                <a class="btn-link" (click)="viewUser(user)">View</a>
+                <a class="btn-link" (click)="editUser(user)">Edit</a>
+                <a class="btn-link delete" (click)="deleteUser(user.id)">Delete</a>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    }
+  </main>
+</div>
