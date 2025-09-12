@@ -1,17 +1,20 @@
 editProfile(updatedUser: { email: string; password: string }): boolean {
   if (!this.currentUser) {
-    return false; // No user logged in
+    return false; // No user is logged in
   }
 
   const users = this.getRegisteredUsers();
 
-  // Check if the email is used by another user
-  const emailTaken = users.some(u => u.email === updatedUser.email && u.id !== this.currentUser.id);
-  if (emailTaken) {
-    return false; // Email already in use by another user
+  // ❗ Disallow email if it's used by another user (different ID)
+  const emailTakenByAnotherUser = users.some(
+    u => u.email === updatedUser.email && u.id !== this.currentUser.id
+  );
+
+  if (emailTakenByAnotherUser) {
+    return false; // Email is already taken by someone else
   }
 
-  // Update the user's information
+  // Find and update the current user
   const userIndex = users.findIndex(u => u.id === this.currentUser.id);
   if (userIndex === -1) {
     return false; // User not found
@@ -22,7 +25,7 @@ editProfile(updatedUser: { email: string; password: string }): boolean {
 
   this.saveRegisteredUsers(users);
 
-  // Update current user in local storage and service
+  // Update localStorage and memory
   this.currentUser = users[userIndex];
   localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
 
