@@ -1,0 +1,50 @@
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-weight: bold;
+  background-color: #f0f0f0;
+
+  .month-name {
+    font-size: 1.2rem;
+  }
+
+  .calendar-icon {
+    font-size: 1.5rem;
+    color: #555;
+  }
+}
+
+.week-days-scroll {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+
+  .day {
+    flex: 0 0 auto;
+    width: 80px;
+    text-align: center;
+    padding: 10px;
+    border-right: 1px solid #eee;
+
+    .day-name {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .day-date {
+      font-size: 1.2rem;
+      color: #333;
+    }
+  }
+
+  // Optional: Hide scrollbar for a cleaner look
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
