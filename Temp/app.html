@@ -1,0 +1,21 @@
+<div *ngFor="let slot of slots" class="slot-container">
+  <div class="days">
+    <div
+      *ngFor="let day of weekDays"
+      class="day"
+      [class.active]="slot.days.includes(day.id)">
+      {{ day.name }}
+    </div>
+  </div>
+
+  <div class="time-section">
+    <div *ngFor="let range of getRanges(slot); let i = index" class="time-row">
+      <label>StartTime</label>
+      <button type="button"   readonly>{{range.start}}</button>
+      <label>EndTime</label>
+      <button type="button"  readonly>{{range.end}}</button>
+    </div>
+  </div>
+</div>
+
+<router-outlet />
