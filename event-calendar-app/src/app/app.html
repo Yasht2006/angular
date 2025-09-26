@@ -1,0 +1,19 @@
+<div class="calendar-container">
+  <div class="calendar-nav">
+    <button (click)="goToPreviousWeek()">Previous</button>
+    <button (click)="goToToday()">Today</button>
+    <button (click)="goToNextWeek()">Next</button>
+  </div>
+
+  <mwl-calendar-week-view
+    [viewDate]="viewDate"
+    [events]="coloredEvents"
+    (eventClicked)="onEventClicked($event.event)"
+    (dayHeaderClicked)="onDayHeaderClicked($event.day.date)"
+    [hourSegments]="2"
+    [weekStartsOn]="1"
+  >
+  </mwl-calendar-week-view>
+</div>
+
+<router-outlet></router-outlet>
