@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { LayoutModule } from './layout/layout-module';
 
 @NgModule({
   declarations: [
@@ -13,9 +14,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CalendarModule.forRoot({
-      provide: DateAdapter, useFactory: adapterFactory
-    })
+    LayoutModule,
   ],
   providers: [
     provideBrowserGlobalErrorListeners()

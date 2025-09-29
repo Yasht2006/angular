@@ -1,0 +1,24 @@
+<div class="calendar-container">
+  <div class="calendar-nav">
+    <button (click)="goToPreviousWeek()">Previous</button>
+    <button (click)="goToToday()">Today</button>
+    <button (click)="goToNextWeek()">Next</button>
+  </div>
+
+  <!-- Correct event template -->
+  <ng-template #eventTemplate let-weekEvent="weekEvent">
+    <span style="color: red; font-weight: bold;">
+      {{ weekEvent.event?.title || 'No title' }}
+    </span>
+  </ng-template>
+
+  <mwl-calendar-week-view
+    [viewDate]="viewDate"
+    [events]="coloredEvents"
+    [eventTemplate]="eventTemplate"
+    [hourSegments]="2"
+    [weekStartsOn]="1"
+    (eventClicked)="onEventClicked($event.event)"
+    (dayHeaderClicked)="onDayHeaderClicked($event.day.date)">
+  </mwl-calendar-week-view>
+</div>
